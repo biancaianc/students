@@ -15,6 +15,12 @@ public class StudentController {
     public ResponseEntity<?> getStudents(){
         return new ResponseEntity<>(studentService.getStudents(), HttpStatus.OK);
     }
+
+    @GetMapping("/geta")
+    public String geta(){ return "a";
+    }
+
+
     @GetMapping("/getStudent/{id}")
     public ResponseEntity<?> getStudent(@PathVariable String id){
         if(studentService.exist(id)){
