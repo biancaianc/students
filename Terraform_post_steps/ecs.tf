@@ -3,7 +3,7 @@ resource "aws_ecs_task_definition" "service" {
   container_definitions = jsonencode([
     {
       name      = "students"
-      image     = aws_ecr_repository.students.name
+      image     = aws_ecr_repository.students.repository_url
       memory    = 512
       essential = true
       portMappings = [
